@@ -49,12 +49,6 @@ with st.sidebar:
   bg_color = st.color_picker("Color de fondo del tablero", "#000000")
 
 
-# Add canvas component
-drawing_mode = "freedraw"
-stroke_width = st.sidebar.slider('Selecciona el ancho de línea', 1, 30, 5)
-stroke_color = "#000000" 
-bg_color = '#FFFFFF'
-
 # Create a canvas component
 
 canvas_result = st_canvas(
