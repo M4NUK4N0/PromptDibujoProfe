@@ -123,11 +123,11 @@ if canvas_result.image_data is not None and api_key and analyze_button:
 # Mostrar la funcionalidad de crear historia si ya se hizo el análisis
 if st.session_state.analysis_done:
     st.divider()
-    st.subheader("📚 ¿Quieres crear una historia?")
+    st.subheader("Busca a que personaje de animacion se parece tu dibujo")
     
-    if st.button("✨ Crear historia infantil"):
-        with st.spinner("Creando historia..."):
-            story_prompt = f"Basándote en esta descripción: '{st.session_state.full_response}', crea una historia infantil breve y entretenida. La historia debe ser creativa y apropiada para niños."
+    if st.button("Busca a que personaje de animacion se parece tu dibujo"):
+        with st.spinner("Buscando personaje..."):
+            story_prompt = f"Basándote en esta descripción: '{st.session_state.full_response}', Busca a que personaje del mundo de la animacion se parece."
             
             story_response = openai.chat.completions.create(
                 model="gpt-4o-mini",
@@ -135,7 +135,7 @@ if st.session_state.analysis_done:
                 max_tokens=500,
             )
             
-            st.markdown("**📖 Tu historia:**")
+            st.markdown("**Personaje**")
             st.write(story_response.choices[0].message.content)
 
 # Warnings for user action required
